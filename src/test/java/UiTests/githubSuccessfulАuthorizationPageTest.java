@@ -4,7 +4,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 import pageObject.githubAuthorizationPage;
 
-public class githubSuccessfulАuthorizationPageTest extends BaseTest {
+public class githubSuccessfulАuthorizationPageTest extends BaseTestGitHubAuthorization {
 
     @Test
     public void loginSuccessfulOperation(){

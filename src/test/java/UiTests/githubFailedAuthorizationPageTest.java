@@ -4,7 +4,7 @@ import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 import pageObject.githubAuthorizationPage;
 
-public class githubFailedAuthorizationPageTest extends BaseTest {
+public class githubFailedAuthorizationPageTest extends BaseTestGitHubAuthorization {
 
     @Test
     public void loginOperationWithBadCredintails(){
