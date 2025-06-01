@@ -1,3 +1,5 @@
+package ApiTests;
+
 import Pojo.GetUnknownApi;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Assertions;

@@ -1,4 +1,5 @@
-import Pojo.GetUnknownApi;
+package ApiTests;
+
 import Pojo.GetUsersData;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Assertions;
