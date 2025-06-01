@@ -7,8 +7,8 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class githubContacts {
-    private static final SelenideElement userFirstName = $(By.id("form-field-first_name"));
-    private static final SelenideElement userLastName = $(By.id("form-field-last_name"));
+    public static final SelenideElement userFirstName = $(By.id("form-field-first_name"));
+    public static final SelenideElement userLastName = $(By.id("form-field-last_name"));
 
     public void dataInput (String firstName, String lastName){
         SetUserFirstName(firstName);
