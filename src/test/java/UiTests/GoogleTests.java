@@ -2,11 +2,17 @@ package UiTests;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.openqa.selenium.By;
 import pageObject.GoogleSearchPage;
 
+import java.util.List;
+
+import static com.codeborne.selenide.Selenide.$$;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static pageObject.GoogleSearchPage.SearchOptions;
 
 
@@ -19,6 +25,6 @@ public class GoogleTests {
         GoogleSearchPage GoogleSearchPage = new GoogleSearchPage ();
         Selenide.open(URL);
         GoogleSearchPage.SetText(searchQuery);
-        SearchOptions.shouldBe(CollectionCondition.sizeGreaterThanOrEqual(5));
+        Assertions.assertTrue(SearchOptions.size() > 5);
     }
 }
