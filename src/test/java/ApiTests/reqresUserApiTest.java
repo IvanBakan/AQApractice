@@ -18,6 +18,7 @@ public class reqresUserApiTest {
                 .contentType(ContentType.JSON)
                 .baseUri("https://reqres.in/api")
                 .basePath("/users?page=2")
+                .header("x-api-key", "reqres-free-v1")
                 .when().get()
                 .then().log().body().statusCode(200);
     }

@@ -18,6 +18,7 @@ public class reqresUnknownApiTests {
                 .contentType(ContentType.JSON)
                 .baseUri("https://reqres.in/api")
                 .basePath("/unknown")
+                .header("x-api-key", "reqres-free-v1")
                 .when().get()
                 .then().log().body().statusCode(200);
     }
