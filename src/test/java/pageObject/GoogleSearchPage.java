@@ -9,10 +9,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class GoogleSearchPage {
-    private static final SelenideElement SearchLine = $(By.id("APjFqb"));
-    public static final ElementsCollection SearchOptions = $$(By.xpath(".//div[@id='Alh6id']//ul/li"));
+    private static final SelenideElement searchLine = $(By.id("APjFqb"));
+    public static final ElementsCollection searchOptions = $$(By.xpath(".//div[@id='Alh6id']//ul/li"));
 
-    public void SetText(String text){
-        SearchLine.shouldBe(visible).setValue(text);
+    public void setText(String text){
+        searchLine.shouldBe(visible).setValue(text);
     }
 }

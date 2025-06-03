@@ -1,13 +1,18 @@
-package ApiTests;
+package apiTests;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
-import static Builders.UserLoginGenerator.setSuccessfulUserData;
+import static builders.UserLoginGenerator.setSuccessfulUserData;
 import static io.restassured.RestAssured.given;
-import static Builders.UserLoginGenerator.setUserData;
+import static builders.UserLoginGenerator.setUserData;
 
-public class reqresLoginTests {
+public class ReqresLoginTests {
+
+    private static final String BASE_URI = "https://reqres.in/api";
+    private static final String BASE_PATH = "/login";
+    private static final String API_KEY_HEADER = "x-api-key";
+    private static final String API_KEY_VALUE = "reqres-free-v1";
 
 
     @Test
@@ -15,9 +20,9 @@ public class reqresLoginTests {
         given()
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
-                .baseUri("https://reqres.in/api")
-                .basePath("/login")
-                .header("x-api-key", "reqres-free-v1")
+                .baseUri(BASE_URI)
+                .basePath(BASE_PATH)
+                .header(API_KEY_HEADER, API_KEY_VALUE)
                 .body(setUserData())
                 .when().post()
                 .then().log().body().statusCode(400);
@@ -28,9 +33,9 @@ public class reqresLoginTests {
         given()
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
-                .baseUri("https://reqres.in/api")
-                .basePath("/login")
-                .header("x-api-key", "reqres-free-v1")
+                .baseUri(BASE_URI)
+                .basePath(BASE_PATH)
+                .header(API_KEY_HEADER, API_KEY_VALUE)
                 .body(setSuccessfulUserData())
                 .when().post()
                 .then().log().body().statusCode(200);

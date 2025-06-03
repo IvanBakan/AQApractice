@@ -1,6 +1,6 @@
-package Builders;
+package builders;
 
-import Pojo.PostLogin;
+import pojo.PostLogin;
 
 public class UserLoginGenerator {
     public static PostLogin setUserData() {
@@ -15,7 +15,7 @@ public class UserLoginGenerator {
     public static PostLogin setSuccessfulUserData() {
         return PostLogin
                 .builder()
-                .username("Иван")
+                .username("Ivan")
                 .email("test@gmail.com")
                 .password("123456789")
                 .build();

@@ -1,14 +1,14 @@
-package UiTests;
+package uiTests;
 
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
-import pageObject.githubAuthorizationPage;
+import pageObject.GithubAuthorizationPage;
 
-public class githubFailedAuthorizationPageTest extends BaseTestGitHubAuthorization {
+public class GithubFailedAuthorizationPageTest extends BaseTestGitHub {
 
     @Test
     public void loginOperationWithBadCredintails(){
-        githubAuthorizationPage githubAuthorizationPage = new githubAuthorizationPage();
+        GithubAuthorizationPage githubAuthorizationPage = new GithubAuthorizationPage();
         Selenide.open("/login");
         githubAuthorizationPage.authOperation("test@gmail.com", "123456789");
         githubAuthorizationPage.isErrorMessageDisplayed();
